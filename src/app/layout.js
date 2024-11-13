@@ -3,6 +3,8 @@
 import './globals.css';
 import React from 'react';
 import { FaBell, FaUserCircle } from 'react-icons/fa';
+import { IoSettingsOutline } from "react-icons/io5";
+import { MdOutlineAnalytics } from "react-icons/md";
 import { useState } from 'react';
 
 
@@ -21,8 +23,8 @@ function Sidebar() {
       <ul className="space-y-4 text-lg">
         <li><a href="Page_0" className="text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center">📄 page 0</a></li>
         <li><a href="Page_1" className="text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center">📄 Page 1</a></li>
-        <li><a href="Page_2" className="text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center">📄 Page 2</a></li>
-        <li><a href="Page_3" className="text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center">📄 Page 3</a></li>
+        <li><a href="Analytics" className="text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center"><MdOutlineAnalytics className="mr-2 text-2xl"/>Analytics</a></li>
+        <li><a href="Settings" className="text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center"><IoSettingsOutline className="mr-2 text-2xl" /> Settings</a></li>
       </ul>
     </nav>
   );
