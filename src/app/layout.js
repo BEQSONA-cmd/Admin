@@ -13,6 +13,29 @@ import { useState } from 'react';
 //   description: 'Welcome to the Admin Panel Template',
 // };
 
+const links = [
+  {
+    name: "Page 0",
+    icon: <MdOutlineAnalytics className="mr-2 text-2xl" />,
+    link: "/page0"
+  },
+  {
+    name: "Page 1",
+    icon: <MdOutlineAnalytics className="mr-2 text-2xl" />,
+    link: "/page1"
+  },
+  {
+    name: "Analytics",
+    icon: <MdOutlineAnalytics className="mr-2 text-2xl" />,
+    link: "/analytics"
+  },
+  {
+    name: "Settings",
+    icon: <IoSettingsOutline className="mr-2 text-2xl" />,
+    link: "/settings",
+  }
+]
+
 function Sidebar() {
   return (
     <nav className="bg-gray-800 p-6 min-h-screen w-60 space-y-4 border-r border-black">
@@ -21,10 +44,14 @@ function Sidebar() {
           <img src="/logo.png" alt="Logo" className="h-10 w-10 mr-3" /> Admin </a>
       </div>
       <ul className="space-y-4 text-lg">
-        <li><a href="Page_0" className="text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center">📄 page 0</a></li>
-        <li><a href="Page_1" className="text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center">📄 Page 1</a></li>
-        <li><a href="Analytics" className="text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center"><MdOutlineAnalytics className="mr-2 text-2xl"/>Analytics</a></li>
-        <li><a href="Settings" className="text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center"><IoSettingsOutline className="mr-2 text-2xl" /> Settings</a></li>
+        {links.map((link, index) => (
+          <li key={index}>
+            <a href={link.link} className={"text-gray-300 duration-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg flex items-center " + link?.className}>
+              {link.icon}
+              {link.name}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
